@@ -16,7 +16,7 @@ O(1)    - one time
 nlogn   - log n times 
 O(n)    - n times 
 
-2) Different types of logical Storage Mappings and their Implementations
+3) Different types of logical Storage Mappings and their Implementations
 
 List Storage 		
 - Arrays, ArrayList, Set, Stack, Queue, DQueue, SortedSet,PriorityQueue,Vector,EnumSet,ArrayDQueue,
@@ -30,9 +30,14 @@ Tree Storage
 Hash Storage
 - HashMap, HashSet,SortedMap,Hashtable, WeekHashMap,EnumMap
 
-3) Thinking patterns used in Problem Solving 
+4) Thinking patterns used in Problem Solving 
 
 Full Search
 - The thinking process is to scan full data and come with results
 Adhoc
 - Based on the problem, come up with thinking approach and apply and see if it working
+
+
+5) General thinking approach to solve problems
+
+Finding core operations in a problem can decide the approach 
