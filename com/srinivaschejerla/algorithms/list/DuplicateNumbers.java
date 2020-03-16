@@ -53,19 +53,30 @@ public class DuplicateNumbers {
 
     }
 
-    public static void main(String args[]) {
-        
+    public static void main(String args[]) {        
+        int size = Integer.parseInt(args[0]);
+
         // construct random array 
-        int inputArr[] = new int[100];
+        int inputArr[] = new int[size];
         Random r = new Random();
 
-        for(int k=0; k<100; k++) {
-            inputArr[k] = r.nextInt(10000);
+        for(int k=0; k<inputArr.length; k++) {
+            inputArr[k] = r.nextInt(100000);
         }
 
         System.out.println(Arrays.toString(inputArr));
 
+        // Benchmark code
+        long startTime = System.currentTimeMillis();        
+        System.out.println("Start time : "+startTime);
+        
         int value = DuplicateNumbers.find(inputArr);
+        
+        long endTime = System.currentTimeMillis();
+        System.out.println(endTime);
+
+        long totalTime = endTime - startTime;
+        System.out.println("Total execution time : "+ totalTime);
 
         if(Integer.MAX_VALUE == value) {
             System.out.println("Not Found! "+ value);
