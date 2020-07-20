@@ -1,1 +1,86 @@
 This repo is about problem solving using computer programming 
+
+-Algorithms and Data Structures. 
+
+1) Basics of computer program execution
+- Code segment      ( instructions  )
+- Global segment    ( data area     )
+- Heap segment      ( data area     )
+- Static segment    ( data area     )
+
+2) Complexities
+- Time complexity 
+    - Time taken to execute program
+- Space complexity
+    - Memory (RAM) size used for running the program
+
+O(1)    - one time
+nlogn   - log n times 
+O(n)    - n times 
+O(n2)   - n^2 times
+
+3) Different types of logical storage mappings and its implementations
+
+List Storage 		
+- Arrays, ArrayList, Set, Stack, Queue, DQueue, SortedSet, 
+    PriorityQueue, Vector, EnumSet, ArrayDQueue
+
+Linked Storage 	
+- LinkedList, LinkedSet, LinkedStack?, LinkedQueue?, LinkedHashMap, 
+    LinkedHashSet
+
+Tree Storage
+- TreeMap, TreeSet
+
+Hash Storage
+- HashMap, HashSet, SortedMap, Hashtable, WeekHashMap, EnumMap
+
+4) Thinking patterns used in Problem Solving 
+
+"Full Search" pattern
+- The thinking process is to scan all given data elements and come up with results
+"Adhoc" pattern
+- Based on the problem, come up with thinking approach, apply it and see if the approach is working
+
+
+5) General thinking approach to solve problems
+
+Finding core operations in a problem can decide the approach 
+
+
+
+======================================================================
+About programming practice
+======================================================================
+Know different styles of programming before learning any language
+
+Identify operations and find complexity
+
+Worst case is what we have to think through
+
+Always converting thought into coding
+Don't recall some idea and code 
+
+Look at thought and analyse the complexity
+Don't look at code and analyse the complexity
+
+Understanding underlaying thought in designing the language is important to learn any language
+
+Allways benchmark code with average 
+
+=================================================
+Pre-requisite
+=================================================
+- Understand n^2 ( n square ) complexity
+- Understand n complexity
+- Understand log n complexity
+- Understand  n log n complexity
+- Understand Big O
+- Understand O(n) - Order of N
+
+===============================================
+Test cases building
+===============================================
+Test case building should be automated 
+Consider creating worst case automation
+
