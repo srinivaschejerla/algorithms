@@ -62,12 +62,23 @@ Don't recall some idea and code
 Look at thought and analyse the complexity
 Don't look at code and analyse the complexity
 
-Benchmark code 
+Understanding underlaying thought in designing the language is important to learn any language
+
+Allways benchmark code with average 
 
 =================================================
 Pre-requisite
 =================================================
-- Understand is log n
-- Understand  n log n
-- Understand n^2 ( n square ) Algorithms
+- Understand n^2 ( n square ) complexity
+- Understand n complexity
+- Understand log n complexity
+- Understand  n log n complexity
 - Understand Big O
+- Understand O(n) - Order of N
+
+===============================================
+Test cases building
+===============================================
+Test case building should be automated 
+Consider creating worst case automation
+

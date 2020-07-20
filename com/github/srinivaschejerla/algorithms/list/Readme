@@ -1,24 +1,21 @@
 "list" is sequential data structure 
 
-Below are various implementations of "list" based data structures in Java
+Below are various implementations of list based data structures in Java
 
 1) Array
 
-Array is one of the "list" based implementations 
+Array is one of the list based implementations 
 Array is index based
 Array implementation can be using primitive types or objects
 Array size is declared while initializing the array
 
 Primitive type declaration
-Ex: 
-
-int arr[] = new arr[10];
+Ex: int arr[] = new arr[10];
 
 Object type declaration  ( Object here can be predefined or custom )
-Ex:
-Array<String> strArray = new Array<String>();
+Ex: Array<String> strArray = new Array<String>();
 
 2) ArrayList 
 
 ArrayList is index based 
-Array size is dynamically allowcated
+ArrayList size is dynamically allowcated

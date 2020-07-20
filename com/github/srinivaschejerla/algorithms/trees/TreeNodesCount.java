@@ -1,4 +1,4 @@
-package com.srinivaschejerla.algorithms.trees;
+package com.github.srinivaschejerla.algorithms.trees;
 
 import java.util.Random;
 
