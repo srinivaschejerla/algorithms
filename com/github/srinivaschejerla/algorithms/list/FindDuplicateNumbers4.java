@@ -16,8 +16,10 @@ import jdk.vm.ci.code.ValueUtil;
 public class FindDuplicateNumbers4 {
 
     /** 
-     * Approach-3 : Adhoc thinking - Auxiliary memory
-     *  - Check using an extra Auxiliary memory can help to bring TC down?
+     * Approach-4 : Adhoc thinking - with same array memory
+     * 
+     * Instaed of using Aux memory like in previous approach, use same given input array to 
+     *  create logic, basically negate the same value - if found already negated then that means duplicated.
      * 
      * TC = 1 scan + comparisions = n * c  = O(n)
      * 
@@ -38,7 +40,7 @@ public class FindDuplicateNumbers4 {
                 return -inputArr[value];
             }
 
-            inputArr[value] = - inputArr[value];                           // set aux array value to some non zero value
+            inputArr[value] = - inputArr[value];                           
         }
 
         return Integer.MAX_VALUE;                           // return integer MAX for checking in parent function 
