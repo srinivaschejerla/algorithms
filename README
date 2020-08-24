@@ -14,10 +14,10 @@ This repo is about problem solving using computer programming
 - Space complexity
     - Memory (RAM) size used for running the program
 
-O(1)    - one time
-nlogn   - log n times 
-O(n)    - n times 
-O(n2)   - n^2 times
+O(1)    - one time execution
+nlogn   - log n times execution
+O(n)    - n times execution
+O(n2)   - n^2 times execution
 
 3) Different types of logical storage mappings and its implementations
 
@@ -39,9 +39,9 @@ Hash Storage
 
 "Full Search" pattern
 - The thinking process is to scan all given data elements and come up with results
+
 "Adhoc" pattern
 - Based on the problem, come up with thinking approach, apply it and see if the approach is working
-
 
 5) General thinking approach to solve problems
 

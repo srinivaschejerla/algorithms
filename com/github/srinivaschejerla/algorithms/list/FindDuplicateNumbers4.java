@@ -3,39 +3,60 @@ package com.github.srinivaschejerla.algorithms.list;
 import java.util.Arrays;
 import java.util.Random;
 
+import jdk.vm.ci.code.ValueUtil;
+
 /**
  * Array problems 
  * 
- * Array implements list based Data Structure with index access
+ * Array implements list based Data Storage Structure with index access
  * Array in Java can store primitive data or object data
  * 
  */
 
 public class FindDuplicateNumbers4 {
-      
+
     /** 
-     * Approach-4 : Negation approach can help to bring it to best complexity?
-     * Adhoc thinking
+     * Approach-3 : Adhoc thinking - Auxiliary memory
+     *  - Check using an extra Auxiliary memory can help to bring TC down?
      * 
-     * TC = soft + scan = nlogn + (n-1) = nlogn = O(nlogn)
+     * TC = 1 scan + comparisions = n * c  = O(n)
      * 
-     * complexity for sorting is logn
+     * SC =  couple local variables = constant space = O(1)
+     * 
+     * Benchmarking for 5 runs -> FindDuplicateNumbers3' 100000 false true  - 4ms
+     * 
+     * Windows 10, 16g RAM, Default JVM settings
+     * 
      * 
      * */     
-    public static int find(int arr[]) {
-
-        Arrays.sort(arr);
-        
-        // System.out.println(Arrays.toString(arr));
-
-        for(int i = 0; i<arr.length-1; i++) {
-            if(arr[i] == arr[i+1]) {
-                return arr[i];
+    public static int find(int inputArr[]) {
+        for(int i = 0; i<inputArr.length; i++) {               // for each element in the input array                            
+            int value = inputArr[i];
+            value = Math.abs(value);
+            
+            if(inputArr[value] < 0) {
+                return -inputArr[value];
             }
+
+            inputArr[value] = - inputArr[value];                           // set aux array value to some non zero value
         }
 
-        return Integer.MAX_VALUE;
+        return Integer.MAX_VALUE;                           // return integer MAX for checking in parent function 
     }
+
+    public static void testCase1(int inputArr[]) {
+
+        int i=0;
+        for(i=0; i<inputArr.length-1; i++) {
+            inputArr[i] = i+1;
+
+            //System.out.println("i="+inputArr[i]);
+        }
+
+        inputArr[i] = i;
+
+        //System.out.println("i="+inputArr[i]);
+    } 
 
     /**
      * Test cases and bench marking
@@ -49,11 +70,13 @@ public class FindDuplicateNumbers4 {
            
         // construct random array 
         int inputArr[] = new int[size];
-        Random r = new Random();
-
-        for(int k=0; k<inputArr.length; k++) {
+        //Random r = new Random();
+        
+        /*for(int k=0; k<inputArr.length; k++) {
             inputArr[k] = r.nextInt(100);
-        }
+        }*/
+
+        testCase1(inputArr); // populate input array values such a way any of the array value is not grater than the array size.
 
         // print array
         if(printArrary) {
@@ -75,6 +98,10 @@ public class FindDuplicateNumbers4 {
             System.out.println("End time : "+ endTime +" ms");
                     
             System.out.println("Total execution time : "+ (endTime - startTime) + " ms");
+        }
+
+        if(printArrary) {
+            System.out.println(Arrays.toString(inputArr));
         }
 
         if(Integer.MAX_VALUE == value) {
