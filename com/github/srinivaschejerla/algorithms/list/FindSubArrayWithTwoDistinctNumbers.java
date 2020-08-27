@@ -17,7 +17,9 @@ import org.graalvm.compiler.nodes.memory.MemoryCheckpoint.Single;
 
     public static int find(int[] in) {
 
-        int sidx =-1, eidx = -1, sv=0,ev=0, maxlen=0;
+        int sidx =-1, eidx = -1, sv=0,ev=0, maxStartIdx=-1, maxEndIdx=-1, maxlen=0;
+        int uniqueNum1 = -1, uniqueNum2 = -1;
+        
         
         for(int i=0; i<in.length-1;i++) {  // [1,1,1,3,3,2,2]
 
@@ -30,28 +32,53 @@ import org.graalvm.compiler.nodes.memory.MemoryCheckpoint.Single;
             System.out.println("sv="+sv + ", ev="+ev);
 
             if((ev-sv) <= 1) {
-                if(sidx == -1) sidx = i;
+                if(sidx == -1) {
+                    sidx = i; uniqueNum1 = -1; uniqueNum2 = -1;
+                }
+
                 eidx = i+1;
-                //System.out.println("sidx="+sidx + ", eidx="+eidx);
+
+                if((ev-sv) == 1) {
+                    if( uniqueNum1 == -1 ) {
+                        uniqueNum1 = sv;
+                        uniqueNum2 = ev;
+                     } else {
+                        if(!((sv == uniqueNum1 || sv == uniqueNum2) 
+                            && (ev == uniqueNum1 || ev == uniqueNum2))) {
+                                break;
+                            }
+                    }
+                }
                 
             } else {
-               
-                sidx = -1; eidx = -1;
+                sidx = -1; eidx = -1;                
             }
 
             int len = eidx - sidx;
-            if(len > maxlen) maxlen = len;
+            if(len >= maxlen) {
+                maxlen = len;
+
+                maxStartIdx = sidx; 
+                maxEndIdx = eidx;                
+            }
 
             System.out.println("sidx="+sidx + ", eidx="+eidx);
 
             System.out.println("maxlen = "+ maxlen);
         }
 
-        for(; sidx<=eidx;sidx++) {
-            System.out.println(in[sidx]);
+        System.out.print("Max unique sub array = [");
+        for(; maxStartIdx<=maxEndIdx;maxStartIdx++) {
+            System.out.print(in[maxStartIdx]);
+            if(maxStartIdx < maxEndIdx) System.out.print(",");
         }
 
-        return maxlen;
+        System.out.print("]");
+        System.out.println();
+
+        //if(unique == false) maxlen = 0;
+
+        return maxlen+1;
     }
     public static void main(String args[]) {
 
