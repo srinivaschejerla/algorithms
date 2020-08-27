@@ -12,6 +12,9 @@ import org.graalvm.compiler.nodes.memory.MemoryCheckpoint.Single;
  * - The difference of two distinct numbers should be 1
  * 
  * Run - FindSubArrayWithTwoDistinctNumbers 5
+ * 
+ * TC - O(n)
+ * SC - O(c)
  */
  public class FindSubArrayWithTwoDistinctNumbers {
 
@@ -21,6 +24,7 @@ import org.graalvm.compiler.nodes.memory.MemoryCheckpoint.Single;
         int uniqueNum1 = -1, uniqueNum2 = -1;
         
         
+        // O(n)
         for(int i=0; i<in.length-1;i++) {  // [1,1,1,3,3,2,2]
 
             if(in[i] < in[i+1]) {
