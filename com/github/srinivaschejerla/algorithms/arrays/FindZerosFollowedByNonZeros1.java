@@ -10,21 +10,53 @@ import java.util.Random;
  * TC - O(n) - compare given n numbers in a loop till arry size is reached in worst cae
  * SC - O(1) - word space
  */
-public final class FindZerosFollowedByNonZeros {
+public final class FindZerosFollowedByNonZeros1 {
 
     static int find(int[] arr) {
+        int l=0, r=arr.length-1, count = 0;
+        int m;
 
-        int count = 0;
+        while(r-l > 2) {   
+            m = (l + r) / 2;
 
-        for(int i=0; i<arr.length; i++) {
-            if(arr[i] != 0 || i == arr.length-1){
-                count = i;
-                break;
+            if(arr[m] == 0) {
+                l = m;
+            } else {
+                r = m - 1;
             }
+        }
+
+        if(arr[r] == 0) {
+            count = r+1;
+        } else {
+            count = l+1;
         }
 
         return count;
     }
+
+    /*public static void main(String args[]) {
+        int size = Integer.parseInt(args[0]);
+        int zc = Integer.parseInt(args[1]);
+        
+        int[] arr = new int[size];
+        Random r = new Random();
+
+        for(int i =0; i<size; i++) {
+            if(i<zc) {
+                arr[i] = 0;
+            } else {
+                arr[i] = r.nextInt(10)+1;
+            }
+        }
+
+        // System.out.println(Arrays.toString(arr));
+
+        int count = FindZerosFollowedByNonZeros1.find(arr);
+        
+        System.out.println(count);
+
+    }*/
 
     public static void testCase1(int arr[], int zc) {
         Random r = new Random();
@@ -62,7 +94,7 @@ public final class FindZerosFollowedByNonZeros {
         }
                 
         // Find duplicate number call
-        int value = FindZerosFollowedByNonZeros.find(arr);
+        int value = FindZerosFollowedByNonZeros1.find(arr);
 
         if(benchMark) {
             long endTime = System.currentTimeMillis();
