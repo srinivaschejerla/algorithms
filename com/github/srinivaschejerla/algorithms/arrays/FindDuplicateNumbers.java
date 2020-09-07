@@ -1,4 +1,4 @@
-package com.github.srinivaschejerla.algorithms.list;
+package com.github.srinivaschejerla.algorithms.arrays;
 
 abstract class FindDuplicateNumbers {
 
