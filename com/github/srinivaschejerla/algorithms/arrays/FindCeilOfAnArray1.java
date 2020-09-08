@@ -8,10 +8,17 @@ import java.util.Random;
  * 
  * Find ceil of the x
  * 
- * Approach - 1 : divide and prune 
+ * Approach - 1 : Divide and Prune 
  * 
  * TC - O(n)
  * SC - O(1)
+ * 
+ * 
+ * java com.github.srinivaschejerla.algorithms.arrays.FindCeilOfAnArray1 10000000 765 false true 
+ * Total execution time : 0 ms
+ * Found! 766
+ * 
+ * 
  * 
  */
 
@@ -27,7 +34,7 @@ public final class FindCeilOfAnArray1 {
         while(r != l) {
             m = (l+r)/2;
 
-            System.out.println("l= "+l +", r= "+r+", m="+m + ", arr[m]="+ arr[m]+",x="+x);
+            //System.out.println("l= "+l +", r= "+r+", m="+m + ", arr[m]="+ arr[m]+",x="+x);
 
            if(arr[m]>x){
                r = m;
@@ -35,7 +42,7 @@ public final class FindCeilOfAnArray1 {
                l = m+1;
            }
 
-           System.out.println("---> l= "+l +", r= "+r+", m="+m);
+           //System.out.println("---> l= "+l +", r= "+r+", m="+m);
 
         }
 

@@ -8,10 +8,16 @@ import java.util.Random;
  * 
  * find ceil of the x
  * 
- * approach - 1 : complete scan / brute-force / name stratagy
+ * Approach - 1 : Complete Scan / Brute-Force / Name Stratagy
+ * 
  * 
  * TC - O(n)
  * SC - O(1)
+ * 
+ * I/O :
+ * java com.github.srinivaschejerla.algorithms.arrays.FindCeilOfAnArray 10000000 765 false true  
+ * Total execution time : 17 ms
+ * Found! 766
  * 
  */
 
