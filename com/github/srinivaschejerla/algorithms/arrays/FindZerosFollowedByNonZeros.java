@@ -5,10 +5,13 @@ import java.util.Random;
 
 /**
  * 
- * Find non zero value index followed by zero values
+ * Find non-zeros followed by zeros
  * 
- * TC - O(n) - compare given n numbers in a loop till arry size is reached in worst cae
+ * Apprach : complete scan
+ * 
+ * TC - O(n) - compare given n numbers in a loop
  * SC - O(1) - word space
+ * 
  */
 public final class FindZerosFollowedByNonZeros {
 
