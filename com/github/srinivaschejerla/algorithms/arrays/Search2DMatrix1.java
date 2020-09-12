@@ -1,73 +1,86 @@
 package com.github.srinivaschejerla.algorithms.arrays;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Random;
 
 
 /**
  * 
- * Find ceil of the x
+ * Find element X in square matrix
  * 
- * Approach - 1 : Divide and Prune 
  * 
- * TC - O(logn )
+ * 1) Each row is sorted
+ * 2) First element of each row is grater than the last element of the previous row
+ * 
+ * Ex:  1,2,3
+ *      4,5,6
+ *      7,8,9
+ * 
+ * find 6
+ * 
+ *  
+ * Approach  : Divide & Pruning
+ * 
+ * 
+ * TC - O(nlogn)
  * SC - O(1)
  * 
- * 
- * java com.github.srinivaschejerla.algorithms.arrays.FindCeilOfAnArray1 10000000 765 false true 
- * Total execution time : 0 ms
+ * I/O :
+ * java com.github.srinivaschejerla.algorithms.arrays.FindCeilOfAnArray 10000000 765 false true  
+ * Total execution time : 17 ms
  * Found! 766
- * 
- * 
  * 
  */
 
-public final class FindCeilOfAnArray1 {
+public final class Search2DMatrix1 {
 
-    static int find(int[] arr, int x){
-        int ceilOfX = Integer.MIN_VALUE;
- 
+    static int find(int[][] arr, int x){
+        int value = Integer.MIN_VALUE;
 
-        int l=0, r=arr.length-1;
-        int m = Integer.MIN_VALUE;
-
-        while(r != l) {
-            m = (l+r)/2;
-
-            //System.out.println("l= "+l +", r= "+r+", m="+m + ", arr[m]="+ arr[m]+",x="+x);
-
-           if(arr[m]>x){
-               r = m;
-           } else {
-               l = m+1;
-           }
-
-           //System.out.println("---> l= "+l +", r= "+r+", m="+m);
-
+        for(int i=0; i<arr.length; i++){
+            System.out.println("row :"+ i);
+            value = findX(arr[i], x);
+            if(value == x) break;
         }
 
-        if(arr[r] > x) {
-            ceilOfX = arr[r];
-        } else {
-            ceilOfX = Integer.MIN_VALUE;
-        }
-        
-
-        
-        return ceilOfX;
+        return value;
 
     }
 
-    public static void testCase1(int arr[]) {
-        Random r = new Random();
+    private static int findX(int[] arr, int x) {
 
-        for(int i =0; i<arr.length; i++) {
-           
-                arr[i] = r.nextInt(arr.length)+1;
-            
+        int mid = 0;
+
+        int value = Integer.MIN_VALUE;
+        int l=0, r=arr.length-1;
+        
+        for(int i=0; i<arr.length; i++) {
+
+            mid = (l+r)/2;
+
+            if(arr[mid] == x)  {
+                return arr[mid];  
+            } else if(arr[mid] > x) {
+                r = mid-1;
+            } else {
+                l = mid+1;
+            }
         }
 
-        Arrays.sort(arr);  
+        return value;
+    }
+
+    public static void testCase1(int arr[][]) {
+        Random r = new Random();
+        
+        for(int i=0; i<arr.length; i++) {
+            for(int j=0; j<arr.length; j++) {
+                arr[i][j] = r.nextInt(arr.length+10);                
+            }
+        }
+        
+        Arrays.sort(arr, Comparator.comparingDouble(a -> a[0]));
     } 
 
      /**
@@ -77,12 +90,12 @@ public final class FindCeilOfAnArray1 {
      */
     public static void main(String args[]) {        
         int size = Integer.parseInt(args[0]);               // read array size from command line
-        int ceilX = Integer.parseInt(args[1]);               // read array size from command line
+        int x = Integer.parseInt(args[1]);                  // find x
         boolean printArrary = Boolean.valueOf(args[2]);     // read boolean value from command line , this is to whether to print input array values
         boolean benchMark = Boolean.valueOf(args[3]);       // read benchmark boolean value from command line, this is to print benchmarking values
            
         // construct random array 
-        int inputArr[] = new int[size];
+        int inputArr[][] = new int[size][size];
         /*Random r = new Random();
 
         for(int k=0; k<inputArr.length; k++) {
@@ -93,8 +106,11 @@ public final class FindCeilOfAnArray1 {
 
         // print array
         if(printArrary) {
-            System.out.println(Arrays.toString(inputArr));
+            for(int[] arr : inputArr) {
+                System.out.println(Arrays.toString(arr));
+            }
         }
+            
 
         // Benchmark code
         long startTime = 0;
@@ -104,7 +120,7 @@ public final class FindCeilOfAnArray1 {
         }
                 
         // Find duplicate number call
-        int value = FindCeilOfAnArray1.find(inputArr, ceilX);
+        int value = Search2DMatrix1.find(inputArr, x);
 
         if(benchMark) {
             long endTime = System.currentTimeMillis();

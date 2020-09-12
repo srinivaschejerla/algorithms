@@ -26,8 +26,6 @@ public final class FindCeilOfAnArray {
     static int find(int[] arr, int x){
         int ceilOfX = Integer.MIN_VALUE;
 
-        Arrays.sort(arr);   
-
         for(int i=0; i<arr.length; i++){
             if(arr[i] > x) {
                 ceilOfX = arr[i];
