@@ -7,7 +7,9 @@ import java.util.Random;
  * 
  * Find non zero value index followed by zero values
  * 
- * TC - O(nlogn) - compare given n numbers with devide approach 
+ * Approach: Compare given n numbers with devide approach 
+ * 
+ * TC - O(nlogn) 
  * SC - O(1) - word space
  */
 public final class FindZerosFollowedByNonZeros1 {

@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Random;
 
+import javax.xml.crypto.dsig.keyinfo.RetrievalMethod;
+
 
 /**
  * 
@@ -33,42 +35,30 @@ import java.util.Random;
  * 
  */
 
-public final class Search2DMatrix2 {
+public final class Search2DMatrix3 {
 
-    static int find(int[][] arr, int x){
-        int value = Integer.MIN_VALUE;
+    private static boolean find(int[][] arr, int x) {
 
-        for(int i=0; i<arr.length; i++){
-            System.out.println("row :"+ i);
-            value = findX(arr[i], x);
-            if(value == x) break;
-        }
+        int l=0, r=(arr.length * arr.length) - 1;
 
-        return value;
+        while(l <= r) {
+            int mid = l+r / 2;
+            long temp = arr[mid / arr.length][mid % arr.length];
+            System.out.println(mid);
+            System.out.println(temp);
+            if(temp == x)
+                return true;
 
-    }
+            if(l == r) 
+                return false;
 
-    private static int findX(int[] arr, int x) {
-
-        int mid = 0;
-
-        int value = Integer.MIN_VALUE;
-        int l=0, r=arr.length-1;
-        
-        for(int i=0; i<arr.length; i++) {
-
-            mid = (l+r)/2;
-
-            if(arr[mid] == x)  {
-                return arr[mid];  
-            } else if(arr[mid] > x) {
+            if(x < temp) 
                 r = mid-1;
-            } else {
-                l = mid+1;
-            }
+            else
+                l = mid + 1;
         }
-
-        return value;
+        
+        return false;
     }
 
     public static void testCase1(int arr[][]) {
@@ -120,7 +110,7 @@ public final class Search2DMatrix2 {
         }
                 
         // Find duplicate number call
-        int value = Search2DMatrix1.find(inputArr, x);
+        boolean value = Search2DMatrix3.find(inputArr, x);
 
         if(benchMark) {
             long endTime = System.currentTimeMillis();
@@ -129,10 +119,10 @@ public final class Search2DMatrix2 {
             System.out.println("Total execution time : "+ (endTime - startTime) + " ms");
         }
 
-        if(Integer.MIN_VALUE == value) {
-            System.out.println("Not Found! "+ value);
+        if(value) {
+            System.out.println("Not Found! "+ x);
         } else {
-            System.out.println("Found! "+ value);
+            System.out.println("Found! "+ x);
         }               
     }
 

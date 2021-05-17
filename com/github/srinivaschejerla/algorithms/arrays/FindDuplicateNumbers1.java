@@ -29,7 +29,7 @@ public class FindDuplicateNumbers1 {
      * n(n-1)/2 = (n^2 - n) / 2 = (n^2 - n) * c  = O(n^2)
      * Note:
      * - (n^2-n) is coming to n^2 at worst case
-     * - and 'c' = 1/2 is constant here i.e, BigO
+     * - and 'c' (1/2) here is a constant  i.e, BigO
      * TC = O(n^2)
      * SC = O(1) : This is because of variables used in the stack area of the running 
      * program to store execution data  

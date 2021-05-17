@@ -1,0 +1,12 @@
+1) Sorted Set
+
+- when an order of data is a key, Sorted Set is the data structure to use
+
+Possible data store : 
+
+ - Sequence sorted Set
+ - Ordered sequential sorted set 
+ - 
+Operations: 
+ - add
+ - 

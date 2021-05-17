@@ -13,10 +13,10 @@ import java.util.Random;
 
 public class FindDuplicateNumbers2 {      
     /** 
-     * Approach-2 : Adhoc thinking : Sort + Scan -> Check if sorting the given input array helps
+     * Approach-2 : Adhoc thinking : Sort + Scan -> Check if sorting of the given input array helps in decreasing TC
      *  
      * TC = (sort + scan)*c = (nlogn + (n-1)) * c = nlogn * c = O(nlogn)
-     *  - TC for sorting is nlogn
+     *  - TC for sorting an arrary is 'nlogn'
      * 
      * SC = O(1) - because "i" is only one contant variable used in scan process
      * 

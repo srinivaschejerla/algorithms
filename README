@@ -1,6 +1,9 @@
 This repo is about problem solving using computer programming 
 
--Algorithms and Data Structures. 
+- Algorithmic Patterns
+- DataStructure Patterns
+- Storage Patterns 
+
 
 1) Basics of computer program execution
 - Code segment      ( instructions  )
@@ -46,7 +49,6 @@ Hash Storage
 5) General thinking approach to solve problems
 
 Finding core operations in a problem can decide the approach 
-
 
 
 ======================================================================

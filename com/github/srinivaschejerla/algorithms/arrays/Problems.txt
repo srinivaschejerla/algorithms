@@ -1,0 +1,5 @@
+1) Find a duplicate number in Array
+2) Find ceil of a number in an Array
+3) Find sub array with two distinct numbers
+4) Find zeros followed by non zeros
+5) Search 2D Matrix

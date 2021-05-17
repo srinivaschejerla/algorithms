@@ -1,0 +1,4 @@
+This section describes Adhoc thinking patterns
+
+- by deeply observing the problem we get a thought process 
+- by doing more and more problems we get though process on solution

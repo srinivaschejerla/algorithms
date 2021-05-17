@@ -10,7 +10,7 @@ import java.util.Random;
  * 
  * Approach - 1 : Divide and Prune 
  * 
- * TC - O(logn )
+ * TC - O(log n)
  * SC - O(1)
  * 
  * 
@@ -77,7 +77,7 @@ public final class FindCeilOfAnArray1 {
      */
     public static void main(String args[]) {        
         int size = Integer.parseInt(args[0]);               // read array size from command line
-        int ceilX = Integer.parseInt(args[1]);               // read array size from command line
+        int ceilX = Integer.parseInt(args[1]);              // read array size from command line
         boolean printArrary = Boolean.valueOf(args[2]);     // read boolean value from command line , this is to whether to print input array values
         boolean benchMark = Boolean.valueOf(args[3]);       // read benchmark boolean value from command line, this is to print benchmarking values
            
